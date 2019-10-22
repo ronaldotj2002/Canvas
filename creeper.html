@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>trabalho canvas Creeper</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <canvas width="350" height="300"></canvas>
+      <script>
+          
+          var tela = document.querySelector('canvas');
+          var pincel = tela.getContext('2d'); 
+
+            // RETANGULO TOTAL
+          pincel.fillStyle = 'darkgreen'
+          pincel.fillRect(0, 0, 350, 300);
+            
+            // OLHOS
+          pincel.fillStyle = 'black'
+          pincel.fillRect(50, 40, 90, 90);
+
+            // OLHOS           
+          pincel.fillStyle = 'black';
+          pincel.fillRect(210, 40, 90, 90);
+
+          // NARIZ           
+          pincel.fillStyle = 'black';
+          pincel.fillRect(140, 130, 70, 100);
+
+          // BIGODE ESQUERDO        
+          pincel.fillStyle = 'black';
+          pincel.fillRect(100, 190, 40, 110);
+
+          // BIGODE DIREITO        
+          pincel.fillStyle = 'black';
+          pincel.fillRect(210, 190, 40, 110);
+
+
+
+           
+      
+      </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
