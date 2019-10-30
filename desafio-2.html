@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Desafio - 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <canvas width="600" height="400"></canvas>
+      <script>
+        //Escreva uma função desenhaQuadrado, que recebe x, y, o tamanho e a cor. Cada quadrado desenhado deve utilizar um stroke.
+        // function desenhaQuadrado(x, y, tamanho, cor) {
+        // }
+        // Baseado nessa função, tente reproduzir a imagem acima!
+
+            function desenhaQuadrado(x, y, tamanho, cor){
+
+                var tela = document.querySelector('canvas');
+                var pincel = tela.getContext('2d');
+
+                pincel.fillStyle = cor;
+                pincel.fillRect(x, y, tamanho, tamanho);
+                pincel.fillStroke = 'black';
+                pincel.strokeRect(x, y, tamanho, tamanho);
+
+            }
+            
+                desenhaQuadrado(70, 70, 70, 'green');
+                desenhaQuadrado(140, 70, 70, 'green');
+                desenhaQuadrado(210, 70, 70, 'green');
+                desenhaQuadrado(280, 70, 70, 'white');
+           
+
+
+      </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
