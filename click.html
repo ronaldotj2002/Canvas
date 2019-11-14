@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Click</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <canvas width="600" height="400"></canvas>
+      <script>          
+
+            var tela = document.querySelector('canvas'); //trazendo o canvas para o js
+            var pincel = tela.getContext('2d'); // escrevendo o canvas na tela
+                        
+            pincel.fillStyle ='#ccc'; //cor do quadrado
+            pincel.fillRect(0, 0, 600, 400);
+      
+            var cores = ['blue', 'red', 'green'];
+            var indiceCorAtual = 0;    
+            
+            function criarCircilo(click){
+
+                var x = click.pageX - tela.offsetLeft; // para retirar a borda branca da esquerda e considerar  somente a tela
+                var y = click.pageY - tela.offsetTop; // para retirar a borda branca do topo e considerar  somente a tela
+
+                pincel.fillStyle = cores[indiceCorAtual];
+                pincel.beginPath();
+                pincel.arc(x, y, 10, 0, 2 * 3.14);
+                pincel.fill();
+                                
+                console.log('Coordenada x: '+ x + ' ||| Coordenada y: ' + y);
+            }
+
+            tela.onclick = criarCircilo;
+
+            
+            function menuCor(cor){
+               
+                indiceCorAtual++;
+                
+                    if(indiceCorAtual >= cores.length) {
+                        indiceCorAtual = 0;
+                    }
+                
+                return false;
+
+            }
+
+            
+
+            tela.oncontextmenu = menuCor;
+            
+            
+         
+         
+
+      </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
