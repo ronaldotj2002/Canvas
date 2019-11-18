@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Click</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <canvas width="600" height="400"></canvas>
+      <br>
+Escolha uma cor <input type="color">
+      <script>          
+
+            var tela = document.querySelector('canvas'); //trazendo o canvas para o js
+            var pincel = tela.getContext('2d'); // escrevendo o canvas na tela
+                        
+            pincel.fillStyle ='#ccc'; //cor do quadrado
+            pincel.fillRect(0, 0, 600, 400); // tamanho
+      
+            var desenha = false;  
+            var cor = document.querySelector("input"); // pegando o input para extrair o seu valor
+            
+            tela.onmousemove = function criarCircilo(click){
+
+                if(desenha) {
+
+                    var x = click.pageX - tela.offsetLeft; // para retirar a borda branca da esquerda e considerar  somente a tela
+                    var y = click.pageY - tela.offsetTop; // para retirar a borda branca do topo e considerar  somente a tela
+
+                    pincel.fillStyle = cor.value; // '.value' pegando o valor atual do input
+                    pincel.beginPath();
+                    pincel.arc(x, y, 10, 0, 2 * 3.14);
+                    pincel.fill();
+                }
+
+                console.log('Coordenada x: '+ x + ' ||| Coordenada y: ' + y);
+
+            }     
+            
+            tela.onmousedown = function() {
+
+                desenha = true;
+            }
+
+            tela.onmouseup = function() {
+
+                desenha = false;
+            }
+            
+                     
+
+      </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
